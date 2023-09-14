@@ -1,0 +1,29 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.The_table
+{
+    border: solid 1.5px rgb(81, 81, 236);
+    display: inline-block;
+    padding: 8px;
+    
+}
+.caption
+{
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-size: 15px;
+}
+.Fisrt_row
+{
+    background-color: gray;
+    color : white;
+}
+.one,.three{
+    background-color:rgb(217, 209, 209);
+}
+.two,.four
+{
+    background-color: lightgray;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>jQ06</title>
+    <style>
+        #object{
+            position: relative;
+            top : 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id = "object"></div>
+
+    <button id = "moveRight">Move right</button>
+    <button id = "moveLeft">Move left</button>
+    <button id = "moveUp">Move up</button>
+    <button id = "moveDown">Move down</button>
+
+    <script>
+        $(document).ready(function (){
+            $("#moveLeft").click(function (){
+                $("#object").animate({
+                    left : '0'
+                },600)
+});
+            $("#moveRight").click(function (){
+                let left = window.innerWidth - $("#object").width();
+                $("#object").animate({
+                    left : left
+                },600)
+});
+
+            $("#moveUp").click(function (){
+                $("#object").animate({
+                    top : '0'
+                },600)
+
+});
+            $("#moveDown").click(function (){
+                let top = window.innerHeight - $("#object").height();
+                $("#object").animate({
+                    top : top
+                },600)
+});
+
+        })
+    </script>
+</body>
+</html>

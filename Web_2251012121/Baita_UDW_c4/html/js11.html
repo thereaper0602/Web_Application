@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js11</title>
+</head>
+<body>
+    <h2>Image Resizing</h2>
+    <hr>
+    <table>
+    <tr>
+        <td>Scale</td>
+        <td><input type="radio" name = "size" id = "size" value = '10%' onchange="scale(this.value)"> 10%</td>
+        <td><input type="radio" name = "size" id = "size" value = '25%' onchange="scale(this.value)"> 25%</td>
+        <td><input type="radio"  name = "size" id = "size" value = '50%' onchange="scale(this.value)"> 50%</td>
+    </tr>
+    </table>
+
+    <img src="/Web_2251012121/Baita_UDW_c4/images/testy.jpg" style="width: 50%;" class = "image">
+
+    <script>
+        function scale(value){
+            document.querySelector(".image").style.width = value;
+        }
+    </script>
+</body>
+</html>

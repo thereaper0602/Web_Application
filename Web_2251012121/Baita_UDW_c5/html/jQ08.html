@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            height: 90px;
+            width:90px;
+            background-color: aqua;
+            border-radius: 45px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id = "object"></div>
+
+    <script>
+        $(document).ready(function (){
+            $(document).click(function (event){
+                let left = event.pageX;
+                let top = event.pageY;
+                $("#object").animate({
+                    left : left,
+                    top : top
+                },600);
+            });
+            $(document).keydown(function (event){
+                let pos = $("#object").position();
+                let ascii = event.which;
+                let left = pos.left;
+                let top = pos.top;
+                switch(ascii){
+                    case 37:{
+                        left-=200;
+                        $("#object").animate({
+                        left : left,
+                    },600);
+                    break;
+                    }
+                    case 39:{
+                        left+=200;
+                        $("#object").animate({
+                        left : left,
+                    },600);
+                    break;
+                    }
+                    case 40:{
+                        top+=200;
+                        $("#object").animate({
+                        top : top,
+                    },600);
+                    break;
+                    }
+                    case 38:{
+                        top-=200;
+                        $("#object").animate({
+                        top : top,
+                    },600);
+                    break;
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+</html>

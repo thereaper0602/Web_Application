@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            width: 240px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form id = "myform" onsubmit="return getUserName();">
+        <table>
+            <caption><h3>MEMBERSHIP REGISTRATION</h3></caption>
+            <tr>
+                <td>User name</td>
+                <td><input type="text" name = "user"></td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name = "pass"></td>
+            </tr>
+
+            <tr>
+                <td>Date</td>
+                <td><input type="date" name = "date"></td>
+            </tr>
+
+            <tr>
+                <td>Gendre</td>
+                <td>
+                    <input type="radio" name = "gen" value="Male">Male
+                    <input type="radio" name = "gen" value="Female">Female
+                </td>
+            </tr>
+
+            <tr>
+                <td>Topic</td>
+                <td><select name = "topic">
+                    <option  value = "Economy">Economy</option>
+                    <option  value = "Sport">Sport</option>
+                    <option  value = "Letter and Art">Letter and Art</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td><button type="submit">Join</button></td>
+                <td><button type="reset">Cancel</button></td>
+            </tr>
+
+        </table>
+        <textarea name = "result" readonly></textarea>
+    </form>
+
+    <script>
+        function calAge(year){
+            return new Date().getFullYear() - year;
+        }
+
+        function calpass(password){
+            return password.length;
+        }
+
+        function getUserName(){
+            let userName = document.forms["myform"]["user"].value;
+            let password = document.forms["myform"]["pass"].value;
+            let date = document.forms["myform"]["date"].value;
+            let input = new Date(date);
+            let year,month,day;
+            if(!!input.valueOf()){
+                year = input.getFullYear();
+                month = input.getMonth() + 1;
+                day = input.getDate();
+            }
+            else console.log("wrong");
+
+            let age = calAge(year);
+
+            let Gendre = document.forms["myform"]["gen"].value,gen;
+
+            switch(Gendre){
+                case "Male":
+                    gen = "male";
+                    break;
+                case "Female":
+                    gen = "female";
+                    break;
+            }
+
+            let topic = document.forms["myform"]["topic"].value,subject;
+            switch(topic){
+                case "Economy":
+                    subject = "Economy";
+                    break;
+                case "Sport":
+                    subject = "Sport";
+                    break;
+                case "Letter and Art":
+                    subject = "Letter and Art";
+                    break;
+            }
+            document.forms["myform"]["result"].value = `Welcome ${userName}\nYou are ${gen}\nYour password has ${calpass(password)} letters\nYour age is ${age}\nThe topic you interest you is ${subject}`;
+            return false;
+        }
+    </script>
+</body>
+</html>

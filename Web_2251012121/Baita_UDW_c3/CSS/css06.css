@@ -1,0 +1,66 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    color: blue;
+    text-align: center;
+    text-shadow: 3px 4px 1px rgb(168, 167, 167);
+    font-size: 50px;
+}
+
+.list_menu{
+    background-color: rgb(22, 200, 200);
+    padding: 10px;
+    font-weight: bold;
+}
+a{
+    margin-left: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    font-size: larger;
+    color: yellow;
+}
+
+h2{
+    font-size: 40px;
+    color: rgb(105, 105, 105);
+}
+
+img{
+    width: 500px;
+    height: 350px;
+}
+
+.first{
+    display: flex;
+    margin-top: 10px;
+}
+
+.first_para{
+    font-size: 20px;
+    width: 85%;
+}
+
+.second_para{
+    font-size: 20px;
+}
+
+button{
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    color : white;
+    background-color: rgb(0, 157, 255);
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+button:hover{
+    color: yellowgreen;
+    background-color: aqua;
+    font-size: 23px;
+}

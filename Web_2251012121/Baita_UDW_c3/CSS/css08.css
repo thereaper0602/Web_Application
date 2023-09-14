@@ -1,0 +1,13 @@
+.container{
+    border: solid 1px blue;
+}
+
+.container .row{
+    margin-bottom: 2px;
+    background-color: rgb(73, 208, 212);
+}
+
+.container .row div{
+    padding: 15px;
+    border: solid 1px blue;
+}

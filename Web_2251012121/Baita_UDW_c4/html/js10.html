@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js10</title>
+
+    <style>
+        .screen{
+            height: 50px;
+            font-size: 30px;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+
+        .js-screen{
+            padding: 0;
+            margin: 0;
+        }
+
+        button{
+            border : none;
+            width: 100px;
+            height:30px;
+            background-color: rgb(0, 255, 68);
+            color: white;
+            font-weight: bold;
+            border-radius: 50px;
+
+        }
+
+        button:hover{
+            background-color: red;
+            color: black;
+            transition: all .2s linear;
+        }
+    </style>
+</head>
+<body>
+    <div class = "screen">
+        <p class="js-screen"></p>
+    </div>
+
+    <table>
+        <tr>
+            <td>Input content : </td>
+            <td><input type="text" class = "prompt"></td>
+        </tr>
+
+        <tr>
+            <td>Background color : </td>
+            <td>
+                <input type="color" class = "backgroundColor" value = "#ff0000">                
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>color : </td>
+            <td>
+                <input type="color" class = "color" value = "#EEFF00">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <button onclick="Execute()">Execute</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function Execute(){
+            let text = document.querySelector(".prompt").value;
+            let backgroundColor = document.querySelector(".backgroundColor").value;
+            let color = document.querySelector(".color").value;
+            document.querySelector(".js-screen").innerHTML = text;
+            document.querySelector(".screen").style.color = color;
+            document.querySelector(".screen").style.backgroundColor = backgroundColor;
+        }
+    </script>
+</body>
+</html>

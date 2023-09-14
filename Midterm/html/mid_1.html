@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm-1</title>
+
+    <link rel="stylesheet" href="/Midterm/style/mid_1.css">
+</head>
+<body>
+    <header>
+        <h2>bài thi ứng dụng web</h2>
+        <p>MSSV : 2251012121-Họ tên : Phí Minh Quang</p>
+    </header>
+
+    <nav class = "menu">
+        <a>Trang chu</a>
+        <div class = "dropdown-content">
+            <a class = "dropdown">Cac hang xe</a>
+            <div class = "dropdown-menu">
+                <a>Ford</a>
+                <a>Honda</a>
+                <a>Toyota</a>
+                <a>Hyundai</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class = "left-section">
+        <img src="/Midterm/images/red-Honda.jpg">
+        <img src = "/Midterm/images/blue-Honda.jpg">
+        <img src = "/Midterm/images/white-Honda.jpg">
+        <img src = "/Midterm/images/yellow-Honda.jpg">
+    </section>
+
+    <section class = "right-section">
+        <h3>Thong tin dat hang</h3>
+        <table border="solid 1px black">
+            <tr>
+                <td>Loai xe : </td>
+                <td>
+                <select name = "selection" id = "carKind" onchange="changeKind();">
+                    <option class = "kind" value = "Honda">Honda</option>
+                    <option class = "kind" value = "Kia">Kia</option>
+                </select>
+            </td>
+            </tr>
+
+            <tr>
+                <td>So luong : </td>
+                <td><input type = "number" class = "quanti"></td>
+            </tr>
+
+            <tr>
+                <td>Mau sac : </td>
+                <td class = "color-picker">
+                    <button class = "color" value = 'red' onclick="changePic('red');"></button>
+                    <button class = "color" value = 'blue'onclick="changePic('blue');"></button>
+                    <button class = "color" value = 'white'onclick="changePic('white');"></button>
+                    <button class = "color" value = 'yellow'onclick="changePic('yellow');"></button>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class = "image-change"></td>
+            </tr>
+
+            <tr><td colspan="2"><button onclick="buy()">Dat hang</button></td></tr>
+
+            <tr>
+                <td colspan="2"><p class = "done"></p></td>
+            </tr>
+
+        </table>
+    </section>
+
+    <script src="/Midterm/js/mid_1.js"></script>
+</body>
+</html>

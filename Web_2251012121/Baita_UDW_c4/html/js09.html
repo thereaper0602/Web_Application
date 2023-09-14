@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js09</title>
+    <script>
+        let arr = new Array();
+        function createArr(){
+            let numarr = Number(document.querySelector(".num").value);
+            for(let i = 0;i<numarr;i++){
+                arr.push(Math.floor(Math.random() * 50) + 1);
+            }
+            document.getElementById("origin").innerHTML =  "Mảng ban đầu : " + arr.join(" ");
+        }
+
+        function ascendingfunc(a,b){
+            return a-b;
+        }
+
+        function descendingfunc(a,b){
+            return b-a;
+        }
+
+        function ascendingArr(){
+            arr.sort(ascendingfunc);
+            document.getElementById("ascending").innerHTML =  "Mảng tăng dần : " + arr.join(" ");
+        }
+
+
+        function decendingArr(){
+            arr.sort(descendingfunc);
+            document.getElementById("descending").innerHTML = "Mảng giảm dần : " + arr.join(" ");
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+        <td>Nhập số phần tử : </td>
+        <td><input type = "number" class = "num" value = "10"></td>
+        </tr>
+
+        <tr>
+            <td><button onclick="createArr()">Tạo mảng</button></td>
+            <td><button onclick="ascendingArr()">Mảng tăng dần</button></td>
+            <td><button onclick="decendingArr()">Mảng giảm dần</button></td>
+        </tr>
+    </table>
+
+    <p id = "origin"></p>
+    <p id = "ascending"></p>
+    <p id = "descending"></p>
+</body>
+</html>

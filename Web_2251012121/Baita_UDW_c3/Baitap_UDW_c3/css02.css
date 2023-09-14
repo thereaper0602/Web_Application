@@ -1,0 +1,38 @@
+body{
+    font-family: arial ,verdana,sans-serif;
+    font-size: 12px;
+}
+
+.none
+{
+    text-transform: none;
+}
+
+.capitalize
+{
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.unppercase
+{
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.lowercase
+{
+    text-transform: lowercase;
+    text-align: left;
+}
+.pageOne::first-letter{
+    font-size: 42px;
+    width: 200px;
+}
+
+.pageOne{
+    font-weight: bold;
+}
+.shadow{
+    text-shadow: #999999 10px 10px 3px;
+}

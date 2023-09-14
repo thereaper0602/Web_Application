@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mid 6</title>
+    <link rel = "stylesheet" href="/Midterm/style/mid_6.css">
+</head>
+<body>
+    <header>
+        <h2>BÀI THI ỨNG DỤNG WEB</h2>
+        <p>MSSV : 2251012121- Họ tên : Phí Minh Quang</p>
+    </header>
+
+    <nav>
+        <a href = "/Midterm/html/mid_6-1.html">Câu 1</a>
+        <a href = "/Midterm/html/mid_6-2.html">Câu 2</a>
+        <div class = "container">
+            <a class = "dropdown">Tin Tức</a>
+            <div class = "dropdown-menu">
+                <a>Công nghệ</a>
+                <a>Phần mềm</a>
+                <a>Phần cứng</a>
+                <a>Việc làm</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class = "main">
+        <section class = "left-section">
+            <p>Ngôn ngữ lập trình</p>
+            <ul type = "none">
+                <li>C++</li>
+                <li>C#</li>
+                <li>Java</li>
+                <li>PHP</li>
+                <li>Python</li>
+                <li>MATLAB</li>
+            </ul>
+            <p>Cơ sở dữ liệu</p>
+            <ul type = "none">
+                <li>Access</li>
+                <li>SQL Server</li>
+                <li>MySQL</li>
+                <li>Oracle</li>
+                <li>PostgreSQL</li>
+            </ul>
+        </section>
+
+        <section class = "middle-quest2">
+        <p>
+            Số phần tử : <input type="number" id = "num">
+            Giá trị nhỏ nhất : <input type = "number" id = "min">
+            Giá trị lớn nhất : <input type = "number" id = "max">
+        </p>
+            <input type = "text" readonly id = "input">
+            <button id = "createArr" onclick="createArray()">Tạo mảng</button>
+            <br><br>
+            <input type = "text" readonly id = "output">
+            <button id = "sort" onclick="Sort()">Sắp xếp chẵn tăng , lẻ giảm</button>
+        </section>
+
+        <section class = "right-section">
+            <p>Quảng cáo 1</p>
+            <p>Quảng cáo 2</p>
+            <p>Quảng cáo 3</p>
+        </section>
+    </div>
+    <script>
+        let arr = [];
+        let num1 = document.getElementById('num');
+        let min1 = document.getElementById('min');
+        let max1 = document.getElementById('max');
+        function createArray(){
+        arr = [];
+        let num = num1.value;
+        let min = min1.value;
+        let max = max1.value;
+            for(let i = 0;i<num;i++){
+                let x = Math.floor(Math.random()* (max-min) + min);
+                arr.push(x);
+            }
+            let resultInput =  arr.join(',')
+            document.getElementById("input").value = resultInput;
+        }
+
+        function increaseEven(a,b){
+            return a-b;
+        }
+
+        function decreaseOdd(a,b){
+            return b-a;
+        }
+
+        function Sort(){
+            let sortArr = [];
+            let evenArr = [];
+            let oddArr = [];
+            for(let i = 0;i<arr.length;i++){
+            if(arr[i]%2===0){
+                evenArr.push(arr[i]);
+            }
+            else{
+                oddArr.push(arr[i]);
+            }
+        }
+            evenArr.sort(increaseEven);
+            oddArr.sort(decreaseOdd);
+            let i = 0;
+            let j = 0;
+            while(i<evenArr.length){
+                sortArr.push(evenArr[i++]);
+            }
+            while(j<oddArr.length){
+                sortArr.push(oddArr[j++]);
+            }
+            let resultOutput = sortArr.join(',');
+            // arr = [];
+            // sortArr = [];
+            document.getElementById("output").value = resultOutput;
+        }
+    </script>
+</body>
+</html>

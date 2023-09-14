@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>jQ09</title>
+
+    <style>
+        .container{
+            display: flex;
+        }
+
+        .container :nth-child(1){
+            background-color: antiquewhite;
+        }
+
+        fieldset{
+            width: 500px;
+            border: solid 1px blue;
+        }
+
+        #contain{
+            background-color: antiquewhite;
+            margin-left: 30px;
+        }
+
+        #screen{
+            color: blue;
+            padding-left: 100px;
+            padding-top:60px;
+            font-size: 50px;
+            padding-right: 100px;
+            font-weight: bold;
+        }
+
+        .addscreen{
+            color: blue;
+            padding-left: 100px;
+            padding-top:60px;
+            font-size: 50px;
+            padding-right: 100px;
+            font-weight: bold;
+            text-shadow: 1px 4px 3px rgba(0, 0, 0, .5);
+        }
+
+        ol li:nth-child(odd),.container :nth-child(1) li:nth-child(1){
+            background-color: rgb(132,33,145);
+        }
+
+        li:nth-child(even){
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+<div class = "container">
+
+<div>
+    <fieldset>
+        <legend>Chọn</legend>
+        <input type="radio" name = "text" id = 'normal'>Chữ bình thường<br>
+        <input type = "radio" name = 'text' id = 'shadow'>Chữ có bóng
+        <p>Chọn màu chữ : <input type = 'color' value = "#0008F5" id = 'pick_color'></p>
+        <button id = "del">Xóa phần tử cuối</button>
+        <button id = "restore">Phục hồi</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Click vào một chuỗi</legend>
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JQUERY</li>
+            <li>JAVASCRIPT</li>
+        </ol>
+    </fieldset>
+</div>
+<div id = 'contain'>
+<p id = 'screen'></p>
+</div>
+</div>
+
+<script>
+    $(document).ready(function (){
+        let queue = [];
+        
+        $("#pick_color").change(function (){
+            let color = $("#pick_color").val();
+            $("#screen").css("color",color);
+        });
+
+        $("#shadow").click(function (){
+            $("#screen").addClass("addscreen");
+        });
+        $("#normal").click(function (){
+            $("#screen").removeClass("addscreen");
+        });
+
+        $("li").click(function (){
+            let subj = $(this).text();
+            $("#screen").text(subj);
+        });
+
+        $("#del").click(function (){
+            let endele = $("ol li:last").text();
+            if(endele=="") return ;
+            queue.unshift(endele);
+            $("ol li:last").remove();
+        });
+
+        $("#restore").click(function (){
+            if(queue.length==0) return;
+            let item = "<li>" + queue.shift() + "</li>";
+            $("ol").append(item);
+        });
+
+    })
+</script>
+</body>
+</html>

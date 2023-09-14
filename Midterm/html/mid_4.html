@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>mid_4</title>
+    <style>
+        header{
+            background-color: aquamarine;
+            font-size: 30px;
+            text-align: center;
+            padding: 2px;
+            font-weight: bold;
+            color :rgb(236, 163, 37);
+            text-shadow: 2px 4px 2px rgba(0,0,0,.5);
+        }
+
+        header p{
+            transition: color .3s;
+        }
+
+        header p:hover{
+            color: plum;
+        }
+
+        nav{
+            display: flex;
+            justify-content: center;
+            background-color: rgb(180, 49, 180);
+            padding: 8px;
+        }
+
+        nav a{
+            background-color: rgb(255, 220, 155);
+            margin-left: 10px;
+            padding: 2px 5px;
+            border-radius: 4px; 
+        }
+
+        .name{
+            position: absolute;
+            right: 20px;
+            top:100px;
+            color:yellow;
+        }
+
+        .screen{
+            display: flex;
+            justify-content: center;
+        }
+
+        .screen p{
+            font-size: 55px;
+            color: blue;
+            border: solid 5px green;
+            width: 120px;
+            height: 120px;
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        #changeColor{
+            text-align: center;
+        }
+
+        #pick{
+            text-align: center;
+        }
+
+        #begin{
+            text-align: center;
+        }
+
+        #begin button{
+            color: white;
+            background-color: rgb(0, 128, 255);
+            padding: 3px 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #result{
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #main-screen{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>BÀI THI ỨNG DỤNG WEB</p>
+    </header>
+<div id = "main-screen">
+    <nav>
+        <a>Trang chủ</a>
+        <a>Giới thiệu</a>
+        <a>Liên hệ</a>
+    </nav>
+    <p class = "name">2251012121-Phí Minh Quang</p>
+    <div class = "screen">
+        <p>6</p>
+        <p>6</p>
+        <p>6</p>
+    </div>
+    <p id = "changeColor">Đổi màu <input type = "color" id = "change"></p>
+    <p id = "pick">Chọn <input type = "radio" name = "range" id = "lower">3-10
+            <input type = "radio" name = "range" id = "higher">11-18
+    </p>
+    <p id = "begin"><button>Quay số</button></p>
+    <p id = result>Điểm : 100</p>
+</div>
+
+<script>
+    $(document).ready(function (){
+        let origin = 100;
+        $("#change").change(function (){
+            let rgb = $("#change").val();
+            $(".screen p").css("color",rgb);
+        });
+
+        function sum(num1, num2, num3) {
+        return num1 + num2 + num3;
+    }
+
+    $("#lower").click(function (){
+        selectedRange = "lower"; // Gán khoảng được chọn vào biến
+    });
+
+    $("#higher").click(function (){
+        selectedRange = "higher"; // Gán khoảng được chọn vào biến
+    });
+
+    $("#begin").click(function (){
+        if (selectedRange === "lower") {
+            let lower = [];
+            for (let i = 0; i < 3; i++) {
+                let x = Math.floor(Math.random() * (10 - 3) + 3);
+                lower.push(x);
+            }
+            let result1 = sum(lower[0], lower[1], lower[2]);
+            for (let i = 0; i < lower.length; i++) {
+                $(`.screen p:nth-child(${i + 1})`).text(lower[i]);
+            }
+            $("#result").text(`Điểm : ${100 - result1}`);
+        } else if (selectedRange === "higher") {
+            let higher = [];
+            for (let i = 0; i < 3; i++) {
+                let x = Math.floor(Math.random() * (18 - 11) + 11);
+                higher.push(x);
+            }
+            let result2 = sum(higher[0], higher[1], higher[2]);
+            for (let i = 0; i < higher.length; i++) {
+                $(`.screen p:nth-child(${i + 1})`).text(higher[i]);
+            }
+            $("#result").text(`Điểm : ${100 + result2}`);
+        }
+    });
+    })
+</script>
+</body>
+</html>

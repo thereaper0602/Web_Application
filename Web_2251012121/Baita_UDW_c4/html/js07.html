@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js07</title>
+    <script>
+        function rotate(){
+            let str = document.getElementById("title").innerHTML;
+            str = str.substr(1) + str.substr(0,1);
+            document.getElementById("title").innerHTML = str;
+        }
+
+        function Normalizing(){
+            let str = document.getElementById("s1").value.toLowerCase();
+            arr = str.split(" ");
+            let i,kq = "",tmp;
+            for(i = 0;i<arr.length;i++){
+                tmp = arr[i].trim();
+                if(tmp!=""){
+                    tmp = tmp.substr(0,1).toUpperCase() + tmp.substr(1);
+                    kq += tmp + " ";
+                }
+            }
+            document.getElementById("s1").value = kq.trim();
+        }
+
+        function reverse(){
+            let s = document.getElementById("s1").value;
+            arr = s.split(" ");
+            arr.reverse();
+            document.getElementById("s1").value = arr.join(" ");
+        }
+
+        function reset(){
+            document.getElementById("s1").value = strOrigin;
+        }
+
+        function insert(){
+            let s1 = document.getElementById("s1").value;
+            let s2 = document.getElementById("s2").value;
+            let pos = document.getElementById("pos").value;
+            if(pos===""){
+                alert("Insert position : ");
+                return false;
+            }
+            if(isNaN(pos) || pos < 0 || pos > s1.length){
+                alert("Error");
+                return false;
+            }
+            let result = insertAt(s1,s2,pos);
+            if(result){
+                document.getElementById("s1").value = result;
+            }
+        }
+
+        function insertAt(main_string,ins_string,pos){
+            return main_string.slice(0,pos) + ins_string + main_string.slice(pos);
+        }
+
+        function replaceAll(){
+            let s1 = document.getElementById("s1").value;
+            let s2 = document.getElementById("s2").value;
+            let s3 = document.getElementById("s3").value;
+            let token = new RegExp(s2,"ig");
+            s1 = s1.replace(token,s3);
+            document.getElementById("s1").value = s1;
+        }
+
+        function deleteAll(){
+            let s1 = document.getElementById("s1").value;
+            let s2 = document.getElementById("s2").value;
+            let s3 = document.getElementById("s3").value;
+            let token = new RegExp(token,"ig");
+            s1 = s1.replace(token," ");
+            document.getElementById("s1").value = s1;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <caption><h2 id = "title">String handling program</h2></caption>
+
+        <tr>
+            <td>String S1 : </td>
+            <td><input type="text" id = "s1" value="Learning JAVASCRIPT is veRY easy"></td>
+        </tr>
+        
+        <tr>
+            <td>String S2 : </td>
+            <td><input type="text" id = "s2" value = "javascript"></td>
+        </tr>
+
+        <tr>
+            <td>String S3</td>
+            <td><input type="text" id = "s3" value = "jQuery"></td>
+        </tr>
+
+        <tr>
+            <td>Position to insert : </td>
+            <td><input type="number" id = "pos" value = "0"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="Normalizing()">Normalizing</button>
+                <button onclick="reverse()">Reverse</button>
+                <button onclick="reset()">Reset</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="replaceAll()">Replace S2 to S3</button>
+                <button onclick="insert()">Insert S2 to S1</button>
+                <button onclick="deleteAll()">Delete S2 in S1</button>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        strOrigin = document.getElementById("s1").value;
+        setInterval(rotate,200);
+    </script>
+    
+</body>
+</html>

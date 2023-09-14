@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Mid_3</title>
+
+    <style>
+        header {
+            background-image: linear-gradient(green ,lightgreen);
+            color: yellow;
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: 1px 2px 3px rgba(0,0,0,.5);
+            padding: 10px 10px;
+            text-align: center;
+            max-height: 60px;
+        }
+
+        header h2 {
+            position: relative;
+            margin-top: 15px;
+            display: inline-block;
+            transition: font-size 0.3s; /* Để tạo hiệu ứng mượt mà khi thay đổi kích thước */
+        }
+
+        header h2:hover {
+            font-size: 27px;
+            color: red;
+        }
+
+        .choice{
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            background-color: blue;
+            height: 30px;
+            max-height: 40px;
+            align-items: center;
+        }
+
+        .choice a{
+            color: white;
+            font-weight: bold;
+            margin-left: 10px;
+            transition: font-size .3s;
+        }
+
+        .choice a:hover{
+            font-size: larger;
+            color: yellow;
+        }
+
+        .screen{
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left{
+            background-image: repeating-linear-gradient(green 33%,lightgreen 67%);
+            width: 180px;
+        }
+
+        .left ul li{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+        }
+
+        .right{
+            background-image: repeating-linear-gradient(green 50%,lightgreen);
+            width: 180px;
+        }
+
+        .right div{
+            background-color:blanchedalmond;
+            margin-left: 4px;
+            margin-right: 4px;
+            height: 160px;
+            margin-top: 10px;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .middle{
+            width: 85%;
+            margin : 0 5px;
+        }
+
+        form {
+            background-color: lightblue;
+        }
+        
+        caption{
+            color: blue;
+        }
+
+        .num{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .num p{
+            background-color: rgb(173, 168, 168);
+            width: 23.33%;
+            height: 100px;
+            color: blue;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 50px;
+            margin-bottom: 0;
+        }
+
+        .middle p{
+            text-align: center;
+        }
+
+        #result,#result-dice{
+            color: red;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .dice {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .dice img{
+            width: 100px;
+        }
+
+        footer{
+            background-color: blue;
+            padding: 6px 10px;
+            color: yellow;
+            font-size: 17px;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        #info {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>TRÒ CHƠI QUAY SỐ</h2>
+    </header>
+
+    <div class = "choice">
+        <a id = "home">Trang chủ</a>
+        <a id = "num_screen">Giao diện số</a>
+        <a id = "img_screen">Giao diện hình</a>
+    </div>
+<section class = "screen">
+    <section class = "left">
+        <ul type = "round">
+            <li>C#</li>
+            <li>PHP & MySQL</li>
+            <li>XML</li>
+            <li>Java</li>
+            <li>SQLServer</li>
+            <li>ASP.NET</li>
+            <li>Android</li>
+            <li>Windows<br>phone</li>
+        </ul>
+    </section>
+
+    <section class = "middle">
+        <form>
+            <table align="center">
+                <caption><h2>ĐĂNG KÝ MUA HÀNG</h2></caption>
+                <tr>
+                    <td>Họ tên</td>
+                    <td><input type = "text" id = "name"></td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td><input type = "email" id = "mail"></td>
+                </tr>
+
+                <tr>
+                    <td>Số lượng mua</td>
+                    <td><input type = "text" id = "quanti"></td>
+                </tr>
+
+                <tr>
+                    <td>Ngày nhận hàng</td>
+                    <td><input type="date" id = "date"></td>
+                </tr>
+
+                <tr>
+                    <td>Thanh toán</td>
+                    <td>
+                        <p><input type = "radio" name = "type" id = "onl">Chuyển khoản
+                        <input type = "radio" name = "type" id = "direct">Trực tiếp khi giao hàng</p>  
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input id = "buy" type = "submit" value = "Đăng ký mua">
+                        <input id = "del" type = "reset" value = "Xóa">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id = "info">
+            <div id = "resultName"></div>
+            <div id = "resultQuanti"></div>
+            <div id = "resultDay"></div>
+            <div id = "resultType"></div>
+        </div>
+    </section>
+
+    <section class = "right">
+        <div>Vùng quảng cáo 1</div>
+        <div>Vùng quảng cáo 2</div>
+    </section>
+</section>
+
+<footer>
+    2251012121-Phí Minh Quang
+</footer>
+<script>
+    function execute(){
+        function check(inputID,messageId,message){
+            let filled = $(`#${inputID}`).val();
+
+            if(filled!==""){
+                $(`#${messageId}`).html("DONE" + "<br>");
+            }
+            else {$(`#${messageId}`).html(message);}
+        };
+        $("#buy").click(function (event){
+            event.preventDefault();
+            let fillName = check("name","resultName","Bạn cần điền họ tên");
+            let fillquanti = $("#quanti").val();
+            if(fillquanti==="" || isNaN(fillquanti) || fillquanti<=0){
+                $("#resultQuanti").html("Bạn phải nhập số lượng");
+            }
+            else $("#resultQuanti").html("DONE <br>");
+            let fillDate = check("date","resultDay","Vui lòng nhập ngày tháng");
+            let radio1 = document.getElementById("onl").checked;
+            let radio2 = document.getElementById("direct").checked;
+            if(!radio1 && !radio2){
+                $("#resultType").html("Bạn phải chọn một kiểu thanh toán");
+            }
+            else $("#resultType").html("DONE" + "<br>");
+        });
+
+        $("#del").click(function (){
+            $("#info").html("");
+        })
+    }
+        execute();
+        $(document).ready(function (){
+        $("#home").click(function (){
+            let info = "";
+            let enough = false;
+            let sale = `<form>
+            <table align="center">
+                <caption><h2>ĐĂNG KÝ MUA HÀNG</h2></caption>
+                <tr>
+                    <td>Họ tên</td>
+                    <td><input type = "text" id = "name"></td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td><input type = "email" id = "mail"></td>
+                </tr>
+
+                <tr>
+                    <td>Số lượng mua</td>
+                    <td><input type = "text" id = "quanti"></td>
+                </tr>
+
+                <tr>
+                    <td>Ngày nhận hàng</td>
+                    <td><input type="date" id = "date"></td>
+                </tr>
+
+                <tr>
+                    <td>Thanh toán</td>
+                    <td>
+                        <p><input type = "radio" name = "type" id = "onl">Chuyển khoản
+                        <input type = "radio" name = "type" id = "direct">Trực tiếp khi giao hàng</p>  
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input id = "buy" type = "submit" value = "Đăng ký mua">
+                        <input id = "del" type = "reset" value = "Xóa">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id = "info">
+            <div id = "resultName"></div>
+            <div id = "resultQuanti"></div>
+            <div id = "resultDay"></div>
+            <div id = "resultType"></div>
+        </div>`;
+            $(".middle").html(sale);   
+            execute(); 
+        });
+
+
+
+        function sum(num1,num2,num3){
+            return num1+num2+num3;
+        }
+        $("#num_screen").click(function() {
+            let num = `<div class = "num">
+            <p id = "num1">1</p>
+            <p id = "num2">2</p>
+            <p id = "num3">3</p>
+        </div>
+
+        <p><button id = "start">Quay số</button></p>
+        <p id = "result">2</p>`;
+        $(".middle").html(num);
+        $("#start").click(function (){
+        let num1 = Math.floor(Math.random() * 11 + 1);
+        let num2 = Math.floor(Math.random() * 11 + 1);
+        let num3 = Math.floor(Math.random() * 11 + 1);
+        $("#num1").text(num1);$("#num2").text(num2);$("#num3").text(num3);
+        let result = sum(num1,num2,num3);
+        $("#result").text(result);
+        });
+        });
+
+        $("#img_screen").click(function (){
+            let img = `<div class = "dice">
+                <img src = "/Midterm/images/dice-1.png">
+                <img src = "/Midterm/images/dice-2.png">
+                <img src = "/Midterm/images/dice-5.png">
+        </div>
+
+        <p><button id = "begin">Quay số</button></p>
+        <p id = "result-dice">2</p>`;
+        $(".middle").html(img);
+        $("#begin").click(function (){
+        let dice1 = Math.floor(Math.random() * 6 + 1);
+        let dice2 = Math.floor(Math.random() * 6 + 1);
+        let dice3 = Math.floor(Math.random() * 6 + 1);
+        let text = `<img src = "/Midterm/images/dice-${dice1}.png">
+                <img src = "/Midterm/images/dice-${dice2}.png">
+                <img src = "/Midterm/images/dice-${dice3}.png">`
+        $(".dice").html(text)
+        let result_dice = sum(dice1,dice2,dice3);
+        $("#result-dice").text(result_dice);
+        });
+        })
+    })
+</script>
+</body>
+</html>

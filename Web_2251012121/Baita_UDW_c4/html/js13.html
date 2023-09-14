@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>js13</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Nhập các giá trị</td>
+                <td><input type="text" class="data"></td>
+                <td>
+                    <button class="submit" onclick="drawChart()">Draw Chart</button>
+                </td>
+            </tr>
+        </table>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+        <script>
+            function drawChart() {
+                const xValues = [];
+                const yValues = [];
+                const data = document.querySelector('.data').value;
+                const dataList = data.split(',');
+                for (let i = 0; i < dataList.length; i++) {
+                    yValues.push(parseInt(dataList[i]));
+                }
+                for (let i = 0; i < dataList.length; i++) {
+                    let ele = `rgb(${
+                        Math.floor(Math.random() * 256)
+                    },${
+                        Math.floor(Math.random() * 256)
+                    },${
+                        Math.floor(Math.random() * 256)
+                    })`;
+                    xValues.push(ele);
+                }
+                new Chart("myChart", {
+                    type: "pie",
+                    data: {
+                        labels: dataList,
+                        datasets: [
+                            {
+                                backgroundColor: xValues,
+                                data: yValues
+                            }
+                        ]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: "chart"
+                        }
+                    }
+                });
+                xValues = [];
+                yValues = [];
+            }
+        </script>
+    </body>
+</html>

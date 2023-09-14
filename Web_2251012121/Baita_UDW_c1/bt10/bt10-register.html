@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Excercise 10-register</title>
+        <style>
+            td
+            {
+                padding-right: 100px;
+            }
+            button
+            {
+                color: white;
+                background-color: rgb(80, 80, 232);
+                border : none;
+                font-weight: bold;
+                border-radius: 5px;
+                padding-top: 2px;
+                padding-bottom: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style = "border : solid 1px blue;width : 800px;height : 500px" >
+            <div align = center>
+                <h4><b>Bài kiếm tra chương 2</b></h4>
+                <b>Môn học : </b> <i>Ứng dụng Web</i><br>
+                <b>Mã số sinh viên : </b> <i>12355</i><br>
+                <b>Họ và tên : </b> <i>Nguyễn Văn A</i>
+                <hr width="95%" color="blue">
+                <a href="bt10-index.html">Trang chủ</a>
+                <a href="bt10-content.html">Nội dung môn học</a>
+                <a href="bt10-register">Đăng ký</a>
+
+            <form>
+                <table border="solid 1px black" style="background-color: rgb(220, 220, 142);">
+                    <caption><b>ĐĂNG KÝ THAM GIA DIỄN ĐÀN</b></caption>
+                    <tr>
+                        <td>Tên đăng nhập : </td>
+                        <td><input type = "text" placeholder="Nhập tên đăng nhập" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>Mật khẩu: </td>
+                        <td><input type = "password" placeholder="password" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>Giới tính :</td>
+                        <td><input type = "radio" name = "gendre" value = "Nam">Nam
+                            <input type = "radio" name = "gendre" value = "Nữ"> Nữ
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Ngày sinh : </td>
+                        <td><input type = "date"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="text" placeholder="Email"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ngôn ngữ lập trình yêu thích nhất</td>
+                        <td><select name = "sel_prlg" style="width: 200px;"><br>
+                            <option value = "C++">C++</option>
+                            <option value = "C#">C#</option>
+                            <option value = "PHP">PHP</option>
+                            <option value = "JAVA">JAVA</option>
+                            <option value = "PYTHON">PYTHON</option>
+                        </select></td>
+                    </tr>
+
+                    <tr>
+                        <td style = "padding-right: 1px;">Quy định khi tham gia diễn đàn</td>
+                        <td><textarea rows="3px" cols = "30px">Quy định</textarea></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="submit">Đăng ký</button>
+                            <button>Hủy</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+            </div>
+        </div>
+    </body>
+</html>

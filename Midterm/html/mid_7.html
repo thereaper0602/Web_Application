@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>new_test</title>
+    <style>
+        body{
+            overflow-x: auto;
+        }
+        header{
+            background-color: rgb(5, 152, 103);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2{
+            color: yellow;
+            padding-left: 10px;
+        }
+
+        .new-title{
+            color: yellow;
+            padding-left: 10px;
+            text-shadow: 1px 4px 3px black;
+        }
+
+        header p{
+            color: white;
+            padding-right: 10px;
+        }
+
+        nav{
+            display: flex;
+            justify-content: center;
+            background-color: rgb(13, 104, 74);
+        }
+
+        nav a{
+            color: white;
+            border: dashed 1px white;
+            padding: 3px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ctn{
+            display: inline-block;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .dropdown-menu{
+            display: none;
+            position: absolute;
+            min-width: 120px;
+        }
+
+        .dropdown-menu a{
+            background-color: rgb(13, 104, 74);
+        }
+
+        .ctn:hover .dropdown-menu{
+            display: block;
+        }
+
+        nav a:hover{
+            background-color: rgb(93, 162, 139);
+        }
+
+        .left{
+            position: fixed;
+            background-color: lightblue;
+            width: 500px;
+        }
+
+        .left .tab1{
+            width: 335px;
+        }
+        .left .tab1,.left .tab2{
+            background-color: blanchedalmond;
+            padding: 20px;
+            margin-left: 60px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .right{
+            position: absolute;
+            right: 10px;
+        }
+
+        .right div img{
+            width: 320px;
+        }
+
+        footer{
+            background-color: blue;
+            position: relative;
+            top:600px;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h2 id = "title">BÀI KIỂM TRA GIỮA KỲ</h2>
+        <p>MSSV : 2251012121-Họ và tên : Phí Minh Quang</p>
+    </header>
+
+    <nav>
+        <a>Trang chủ</a>
+    <div class = "ctn">
+        <a>Tin tức</a>
+        <div class = "dropdown-menu">
+            <a>Phần mềm</a>
+            <a>Phần cứng</a>
+            <a>Việc làm</a>
+        </div>
+    </div>
+        <a>Liên Hệ</a>
+    </nav>
+
+    <div class = "main">
+        <section class = "left">
+            <table class = "tab1">
+                <tr>
+                    <td>
+                        <input type="checkbox" name = "shadow" id = "yes" onclick="check()">Có bóng
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Chọn màu</td>
+                    <td>
+                        <input type = "color" id = "picker">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Chọn màu bóng</td>
+                    <td>
+                        <input type = "color" id = "picker-shadow">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Chọn loại : </td>
+                    <td><select id = "loai">
+                        <option value = "0">BRW</option>
+                        <option value = "1">RBW</option>
+                        <option value = "2">WBR</option>
+                    </select></td>
+                </tr>
+            </table>
+            <br>
+            <table class = "tab2">
+            <tr>
+                <td>Nhập chuỗi</td>
+                <td><input type="text" id = "input"></td>
+            </tr>
+
+            <tr>
+                <td>Nhập số</td>
+                <td><input type="text" id = "num"></td>
+            </tr>
+
+            <tr>
+                <td>Kết quả</td>
+                <td><input type="text" readonly id = "result"></td>
+            </tr>
+
+            <tr>
+                <td><button id = "general" onclick="generalize()">Chuẩn hóa chuỗi</button></td>
+            </tr>
+            </table>
+        </section>
+
+        <section class = "right">
+            <div>
+                <img src = "/Midterm/images/blue-Honda.jpg">
+                <img src = "/Midterm/images/red-Honda.jpg">
+                <img src = "/Midterm/images/white-Honda.jpg">
+            </div>
+
+            <div>
+                <img src = "/Midterm/images/red-Honda.jpg">
+                <img src = "/Midterm/images/blue-Honda.jpg">
+                <img src = "/Midterm/images/white-Honda.jpg">
+            </div>
+
+            <div>
+                <img src = "/Midterm/images/white-Honda.jpg">
+                <img src = "/Midterm/images/blue-Honda.jpg">
+                <img src = "/Midterm/images/red-Honda.jpg">
+            </div>
+        </section>
+    </div>
+
+    <footer>Copyright 2023</footer>
+    <script>
+        function check(){
+                let box = document.getElementById("yes");
+                if(box.checked===true){
+                    $("#title").addClass("new-title");
+                    return true;
+                }
+                else 
+                {
+                    $("#title").removeClass("new-title");
+                    $("#title").css("text-shadow", "none");
+                    return false;
+                }
+            }
+
+        let arr = [
+        `<div>
+                <img src = "/Midterm/images/blue-Honda.jpg">
+                <img src = "/Midterm/images/red-Honda.jpg">
+                <img src = "/Midterm/images/white-Honda.jpg">
+         </div>`,
+        ` <div>
+                <img src = "/Midterm/images/red-Honda.jpg">
+                <img src = "/Midterm/images/blue-Honda.jpg">
+                <img src = "/Midterm/images/white-Honda.jpg">
+            </div>`,
+        `<div>
+                <img src = "/Midterm/images/white-Honda.jpg">
+                <img src = "/Midterm/images/blue-Honda.jpg">
+                <img src = "/Midterm/images/red-Honda.jpg">
+            </div>`]
+        $(document).ready(function (){
+            $("#picker").change(function (){
+               let newclr =  $("#picker").val();
+               $("#title").css("color",newclr);
+            });
+
+            $("#loai").change(function (){
+                let show =  Number($(this).val());
+                $(".right").html(arr[show]);
+            });
+
+            $("#picker-shadow").change(function (){
+                if(check()===true){
+                    let newShadow = $("#picker-shadow").val();
+                    $("#title").css("text-shadow", `1px 4px 3px ${newShadow}`);
+                }
+                else{
+                    $("#title").css("text-shadow", "none");
+                }
+            })
+        });
+
+
+        function giai2(numChar,n){
+            if(numChar >= 97 && numChar <=122){
+                if(numChar+n > 122){
+                    return n - (122-numChar) + 97 - 1;
+                }
+                else return numChar + n;
+            }
+
+            else if(numChar >= 65 && numChar <=90){
+                if(numChar+n > 90){
+                    return n - (90-numChar) + 65 - 1;
+                }
+                else return numChar + n;
+            }
+
+            else if(numChar >= 48 && numChar <=57){
+                if(numChar+n > 57){
+                    return n - (57-numChar) + 48 - 1;
+                }
+                else return numChar + n;
+            }
+        }
+
+        let inputData = document.getElementById("input");
+        let num = document.getElementById("num");
+        function generalize(){
+            let n = Number(num.value);
+            console.log(n);
+            let result = "";
+            let data = inputData.value;
+            for(let i = 0;i<data.length;i++){
+                if(data[i]!=' '){
+                    let numChar = data.charCodeAt(i);
+                    let x = giai2(numChar,n);
+                    console.log(x);
+                    result += String.fromCharCode(x);
+                }
+                else result += " ";
+            }
+            console.log(result);
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("p button").click(function (){
+                let color = $(this).css("background-color");
+                let name;
+                console.log(color);
+                switch(color){
+                    case "rgb(0, 0, 255)": name = 'blue';break;
+                    case "rgb(255, 0, 0)":name = "red";break;
+                    case "rgb(255, 0, 255)": name = "pink";break;
+                    case "rgb(98, 255, 0)": name = "green";break;
+                }
+                console.log(name);
+                $('#result').text(`You picked ${name} : ${color}`);
+                $('#result').css("color",color);
+                $('.screen').css("background-color",color);
+            })
+        })
+    </script>
+    <style>
+        p button{
+            border: none;
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+        }
+
+        p button:hover{
+            transform: scale(1.1);
+            transition: all .3s linear;
+        }
+    </style>
+</head>
+<body>
+    <p>Click lên các hình vuông : </p>
+    <p class = "colorBox">
+        <button id = "button" style="background-color: rgb(0, 0, 255);"></button>
+        <button id = "button" style="background-color: rgb(255, 0, 0);"></button>
+        <button id = "button" style="background-color: rgb(255, 0, 255);"></button>
+        <button id = "button" style="background-color: rgb(98, 255, 0)"></button>
+    </p>
+    <p id = "result" style = "font-weight: bold;"></p>
+    <div class = "screen" style="width: 500px;height: 500px;border: solid 5px gray;">
+    </div>
+    
+</body>
+</html>

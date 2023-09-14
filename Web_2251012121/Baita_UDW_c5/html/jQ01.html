@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Subject's name : </td>
+            <td><input type="text"  class = "subject"></td>
+        </tr>
+    </table>
+    <ul type = "round" class = "list"></ul>
+
+    <button class = "submit">Add subject</button>
+
+
+<script>
+    $(document).ready(function(){
+        $(".submit").click(function() {
+            let subject = $(".subject").val();
+            if(subject.trim()!=="") {
+                $(".list").append(`<li>${subject}</li>`);
+            }
+            $(".subject").val("");
+            document.querySelector(".subject").innerHTML = '';
+        });
+        $(".subject").change(function (){
+            let subject = $(".subject").val();
+            if(subject.trim()!=="") {
+                $(".list").append(`<li>${subject}</li>`);
+            }
+            $(".subject").val("");
+            document.querySelector(".subject").innerHTML = '';
+        });
+    });
+</script>
+</body>
+</html>

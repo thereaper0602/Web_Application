@@ -1,0 +1,155 @@
+
+img {
+	width : 90px;
+}
+
+@keyframes text-transition{
+	0%{
+		font-size: 12px;
+	}
+	100%{
+		font-size: 12.8px;
+	}
+}
+
+.div_text
+{
+	text-align: center;
+	animation: text-transition 1s linear infinite;
+}
+
+.banner
+{
+	padding-top: 0.3px;
+	padding-bottom: 0.3px;
+	margin-bottom: 20px;
+	color: white;
+	animation: color-transition 1s linear infinite;
+}
+
+.img_1{
+	width: 100px;
+	height: 100px;
+	position : relative;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.img_1 img {
+	position : absolute;
+	opacity: 0;
+	animation : switchImages 9s infinite;
+}
+
+.img_1 img:nth-child(1)
+{
+	animation-delay: 0s;
+}
+
+.img_1 img:nth-child(2)
+{
+	animation-delay: 3s;
+}
+
+.img_1 img:nth-child(3)
+{
+	animation-delay: 6s;
+}
+
+@keyframes color-transition {
+	0% {
+		background-color: #4C6085;
+		border-color: #4C6085;
+	}
+	33% {
+		background-color: #80D39B;
+		border-color: #80D39B;
+	}
+	66% {
+		background-color: #BE3E82;
+		border-color: #BE3E82;
+	}
+	100% {
+		background-color: #4C6085;
+		border-color: #4C6085;
+	}
+}
+
+@keyframes switchImages{
+	0%{
+		opacity: 0;
+	}
+	11.11%{
+		opacity: 1;
+	}
+	22.22%{
+		opacity : 1;
+	}
+	33.33%{
+		opacity: 0;
+	}
+}
+
+
+.box_2{
+	border: dotted 1px rgb(21, 0, 255);
+	background-color: rgb(115, 241, 255);
+	border-width: 2px;
+	padding-right: 40px;
+	padding-left: 40px;
+	padding-top: 20px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.text_box_2{
+	text-align: center;
+}
+
+.box_3{
+	border: dotted 1px rgb(0, 162, 255);
+	background-color: rgb(123, 240, 253);
+	border-width: 2px;
+	padding-right: 40px;
+	padding-left: 40px;
+	padding-top: 20px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.box_4
+{
+	border: solid 1px yellow;
+	background-color: green;
+	color: yellow;
+	border-width: 2px;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 20px;
+	animation: rotate 10s linear infinite;
+}
+
+.flex{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 45px;
+}
+
+@keyframes rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	25%{
+		transform: rotate(90deg);
+	}
+	50%{
+		transform: rotate(180deg);
+	}
+	75%{
+		transform: rotate(270deg);
+	}
+    100%{
+		transform: rotate(360deg);
+	}
+}

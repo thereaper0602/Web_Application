@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>jQ05</title>
+</head>
+<body>
+    <img id = "screen" src="/Midterm/images/blue-Kia.jpg">
+
+    <script>
+        $(document).ready(function (){
+            $("#screen").mouseenter(function (){
+                $("#screen").attr("src","/Midterm/images/blue-Honda.jpg");
+                $("#screen").animate({
+                    height : "+=200px",
+                    width : "+=200px"
+                });
+            });
+            $("#screen").mouseout(function (){
+                $("#screen").attr("src","/Midterm/images/blue-Kia.jpg");
+                $("#screen").animate({
+                    height : "-=200px",
+                    width : "-=200px"
+                });
+            });
+        })
+    </script>
+
+</body>
+</html>

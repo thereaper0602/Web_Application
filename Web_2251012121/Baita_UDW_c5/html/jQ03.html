@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQ03</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+
+        td,thead {
+            padding: 8px 10px;
+        }
+
+        thead{
+            text-align: center;
+            background-color: aqua;
+            font-weight: bold;
+            border: solid lightgreen 1.5px;
+        }
+    </style>
+</head>
+<body>
+    <table border="solid 1px black">
+        <caption><h3>Bảng giá vật tư</h3></caption>
+        <thead>
+            <td>Tên vật tư</td>
+            <td>Đơn vị tính</td>
+            <td>Đơn giá</td>
+        </thead>
+
+        <tr>
+            <td>Cát</td>
+            <td>Khối</td>
+            <td>77,000</td>
+        </tr>
+
+        <tr>
+            <td>Đá</td>
+            <td>Khối</td>
+            <td>90,000</td>
+        </tr>
+
+        <tr>
+            <td>Xi măng Hà Tiên loại 1</td>
+            <td>Bao</td>
+            <td>120,000</td>
+        </tr>
+
+        <tr>
+            <td>Xi măng Hà Tiên loại 2</td>
+            <td>Bao</td>
+            <td>100,000</td>
+        </tr>
+    </table>
+    <button id = "changeColor">Đổi màu nền</button>
+    <button id = "reset">Màu nền mặc định</button>
+    <script>
+        $(document).ready(function (){
+            $('#changeColor').click(function (){
+                $("tr:odd").css("background-color","pink");
+            });
+            $('#reset').click(function (){
+                $("tr:odd").css("background-color","white");
+            })
+        });
+    </script>
+</body>
+</html>

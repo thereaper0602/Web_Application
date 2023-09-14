@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js05</title>
+</head>
+
+
+<style>
+    table,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 16px;
+    }
+    table{
+        margin: 0px auto;
+    }
+    caption{
+        font-size: 2em;
+        font-weight: bold;
+    }
+</style>
+<body>
+    
+
+    <script>
+        let html = "<table><caption>Multiply table</caption>";
+        let count = 2,row,col;
+        for(row = 1;row<=2;row++){
+            html+="<tr>";
+            for(col = 1;col <= 4;col++){
+                html+="<td>";
+                for(let i = 1;i<=9;i++){
+                    html += count + "x" + i + "=" + count*i +"<br>";
+                }
+                html+="</td>";
+                count++;
+            }
+            html+="</tr>";
+        }
+        html+="</table>";
+        document.write(html);
+    </script>
+</body>
+</html>

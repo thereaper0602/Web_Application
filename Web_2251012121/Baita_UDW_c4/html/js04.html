@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>js04</title>
+        <script src = "/Web_2251012121/Baita_UDW_c4/js/js04.js"></script>
+</head>
+<body>
+    <form id = "form" onsubmit="return Execute();">
+    <table align="center" border="solid">
+        <caption><h2>Operators</h2></caption>
+        <tr>
+            <td>First number</td>
+            <td><input type="text" name = "num-one"></td>
+        </tr>
+        <tr>
+            <td>Second number</td>
+            <td><input type="text" name = "num-two"></td>
+        </tr>
+        <tr>
+            <td>Choose one Operators</td>
+            <td>
+                <p>
+                    <input type="radio" name = "op" value = "+">Addition (+)<br>
+                    <input type="radio" name = "op" value = "-">Difference (-)<br>
+                    <input type="radio" name = "op" value = "*">Multiplication (*)<br>
+                    <input type="radio" name = "op" value = "/" checked>Separation (/)<br>
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" name = "execute" value = "Execute">
+
+                <input type="reset" value = "Reset">
+            </td>
+            <td><input type = "text" name = "result" readonly /></td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
