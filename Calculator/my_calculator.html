@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first calculator</title>
+    <link rel = "stylesheet" href="/Calculator/style.css"> 
+</head>
+<body>
+
+    <div  class = "screen js-screen">
+        <p></p>
+    </div>
+
+    <table>
+        <tr>
+            <td><button class = '
+input';  onclick = "updateCalculation('1'); ">1</button></td>
+            <td><button class = '
+                input';  onclick = "updateCalculation('2'); ">2</button></td>
+            <td><button class = '
+                input';  onclick = "updateCalculation('3'); ">3</button></td>
+            <td><button class = '
+                input ope';  onclick = "updateCalculation(' + '); ">+</button></td>
+        </tr>
+
+        <tr>
+            <td><button class = '
+                input';  onclick = "updateCalculation('4'); ">4</button></td>
+            <td><button class = '
+                input';  onclick = "updateCalculation('5'); ">5</button></td>
+            <td><button class = '
+                input';  onclick = "updateCalculation('6'); ">6</button></td>
+            <td><button class = '
+                input ope';  onclick = "updateCalculation(' - '); ">-</button></td>
+        </tr>
+
+        <tr>
+            <td><button class = '
+                input';  onclick = "updateCalculation('7'); ">7</button></td>
+            <td><button class = '
+                input';  onclick = "updateCalculation('8'); ">8</button></td>
+            <td><button class = '
+                input';  onclick = "updateCalculation('9'); ">9</button></td>
+            <td><button class = '
+                input ope';  onclick = "updateCalculation(' * '); ">*</button></td>
+        </tr>
+
+        <tr>
+            <td><button class = '
+                input';  onclick = "updateCalculation('0'); ">0</button></td>
+            <td><button class = '
+                input';  onclick = "updateCalculation('.'); ">.</button></td>
+            <td><button class = '
+                input';  onclick = "
+                    calculation = eval(calculation);
+                    localStorage.setItem('calculation',calculation);
+                    displayCalculation();
+                    ">=</button></td>
+            <td><button class = '
+                input ope';  onclick = "updateCalculation(' / '); ">/</button></td>
+        </tr>
+    </table>
+    <button onclick="
+    calculation=''
+    localStorage.setItem('calculation',calculation);
+    displayCalculation();">Clear</button>
+</body>
+
+<script src="/Calculator/script.js"></script>
+</html>
