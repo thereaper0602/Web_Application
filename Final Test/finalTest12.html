@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body > div:nth-child(1){
+            width:100%;
+            border-radius: 20px;
+            background-color: gray;
+            height: 100px;
+            color: white;
+            font-size: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body > div:nth-child(2){
+            background-color: yellow;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        body > div:nth-child(2) > div{
+            border: dashed 3px green;
+            width: 50%;
+            text-align: center;
+        }
+
+        body > div:nth-child(2) > div:nth-child(1){
+            color: blue;
+        }
+
+        body > div:nth-child(2) > div:nth-child(2){
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div>String encoding</div>
+    <div>
+        <div>
+            <h2>Original string</h2>
+            <h3 id = "origin">ABC1289XYZ</h3>
+        </div>
+
+        <div>
+            <h2>Encrypted string</h2>
+            <h3 id = "encryp"></h3>
+        </div>
+    </div>
+
+    <script>
+        function crypt(str){
+            let retrn = "";
+            for(let i = 0;i<str.length;i++){
+                if(str[i] == 'z'){
+                    retrn += 'a';
+                }
+                else if(str[i] == 'Z'){
+                    retrn += 'A';
+                }
+                else if(str[i] == '9'){
+                    retrn += '0';
+                }
+                else{
+                    let x = str.charCodeAt(i) + 1;
+                    retrn += String.fromCharCode(x);
+                }
+            }
+            return retrn;
+        }
+        $(document).ready(function (){
+            $("#origin").click(function (){
+                let data = $("#origin").html();
+                $("#encryp").html(crypt(data));
+            });
+            $("#encryp").click(function (){
+                $("#encryp").html("");
+            });
+        })
+    </script>
+</body>
+</html>

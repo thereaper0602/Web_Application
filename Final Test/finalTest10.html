@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .img{
+            box-sizing: border-box;
+            border: 1px solid;
+            text-align: center;
+            margin-left: 25%;
+        }
+
+        .thumb{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .thumb > div{
+            border: solid 1px;
+            flex-basis: 47%;
+            text-align: center;
+        }
+
+        div > div:nth-child(2){
+            display: flex;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class = "test">
+        <div>
+            <div class = "img" style="width: 50%;padding: 100px 0;">IMAGE</div>
+            <div class = "thumb">
+                <div style="margin: 1%;">SUB1</div>
+                <div style="margin: 1%;">SUB2</div>
+                <div style="margin: 1%;">SUB3</div>
+                <div style="margin: 1%;">SUB4</div>
+            </div>
+        </div>
+        <div>
+            <input type = "button" value = "red" style = "background-color: red;">
+            <input type = "button" value = "green" style = "background-color: green;">
+            <input type = "button" value = "blue" style = "background-color: blue;">
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function (){
+            let txt = "";
+            $(".thumb > div").click(function (){
+                txt = $(this).html();
+                $(".img").html(txt);
+            });
+
+            $(".test > div:nth-child(2) > input").click(function(){
+                let color = $(this).css("background-color");
+                $(".img").css("background-color",`${color}`);
+            })
+        })
+    </script>
+</body>
+</html>

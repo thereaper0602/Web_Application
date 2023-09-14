@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .items{
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        .item-4,.item-2{
+            display: flex;
+        }
+
+        .item-4 > div{
+            width: 200px;
+        }
+
+        .item-2 > div{
+            width: 400px;
+        }
+
+        .item-4 div:nth-child(1){
+            background-color: brown;
+        }
+
+        .item-4 div:nth-child(2){
+            background-color: green;
+        }
+
+        .item-4 div:nth-child(3){
+            background-color: blue;
+        }
+
+        .item-4 div:nth-child(4){
+            background-color: yellow;
+        }
+
+        .item-2 div:nth-child(1){
+            background-color: brown;
+        }
+
+        .item-2 div:nth-child(2){
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="items">
+        <div class="item item-4">
+         <div>BROWN</div>
+         <div>GREEN</div>
+         <div>BLUE</div>
+         <div>GOLD</div>
+        </div>
+        <div class="item item-2">
+         <div>BROWN</div>
+         <div>GREEN</div>
+         </div>
+        </div>
+</body>
+</html>

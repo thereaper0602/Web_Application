@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+       .items{
+        display: flex;
+        flex-direction: row;
+       }
+
+       .item{
+        border: dotted 1px;
+        flex-basis: 50%;
+       }
+
+       .image{
+        border: 2px solid black;
+        width: 120px;
+        height : 120px;
+        float : left;
+       }
+
+       .item > div:last-child{
+        clear: left;
+       }
+
+       a{
+        text-decoration: none;
+       }
+    </style>
+</head>
+<body>
+    <div class = "items">
+        <div class = "item">
+            <div class = "image">HTML (120X120)</div>
+            <div><a href = "#">HTML</a></div>
+            <div>HTML for beginner</div>
+        </div>
+
+        <div class = "item">
+            <div class = "image">CSS (120X120)</div>
+            <div><a href = "#">CSS</a></div>
+            <div>CSS for beginner</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    
+</script>
+</html>

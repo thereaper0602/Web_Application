@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div > input{
+            width: 50px;
+        }
+
+        body input:nth-child(3){
+            width: 300px;
+        }
+
+        body > input:nth-child(7){
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chuong trinh xu ly mang</h1>
+    <div>
+        <label for = "num">So phan tu</label>
+        <input id = "num" type="number" step="10" value="10">
+
+        <label for = "min">Gia tri nho nhat</label>
+        <input id = "min" type="number" step="10" value="10">
+
+        <label for = "max">Gia tri lon nhat</label>
+        <input id = "max" type="number" step="10" value="100">
+    </div>
+
+    <input type = "text" id = "origin" readonly>
+    <label for = "origin"><button onclick="create()">Tao mang</button></label>
+    <br>
+    <br>
+    <input type="text" id = "sorted" readonly>
+    <label for = "sorted"><button onclick="Sorted()">Sap xep mang chan tang le giam</button></label>
+
+    <script>
+        function increase(a,b){
+            return a - b;
+        }
+
+        function decrease(a,b){
+            return b - a;
+        }
+
+        function create(){
+            let mini =min.value;
+            let maxi = max.value;
+            let numEle = num.value;
+            for(let i = 0;i<numEle;i++){
+                let x = Math.floor(Math.random() * (maxi-mini) + mini);
+                origin.push(x);
+                if(x % 2 === 0){
+                    even.push(x)
+                }
+                else{
+                    odd.push(x);
+                }
+            }
+
+            let show = origin.join(',');
+            even.sort(increase);
+            odd.sort(decrease);
+            origin = []
+            document.getElementById("origin").value = show;
+        }
+
+        function Sorted(){
+            let sortArr = [];
+            for(let i = 0;i < even.length;i++){
+                sortArr.push(even[i]);
+            }
+            for(let i = 0;i < odd.length;i++){
+                sortArr.push(odd[i]);
+            }
+            let show = sortArr.join(',');
+            sortArr = [];even = [];odd = [];
+            document.getElementById("sorted").value = show;
+        }
+
+        let origin = []
+        let even = []
+        let odd = []
+        let num = document.getElementById("num");
+        let min = document.getElementById("min");
+        let max = document.getElementById("max");
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        #myBallId{
+            /* position: relative;  */
+            border-radius: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+         <input type="button" id="playBallId" value="Play" />
+        </div>
+        <div>
+        <img src="/Midterm/images/blue-Kia.jpg" id="myBallId" alt="ball" width="120"/>
+        </div>
+        </div>
+    <script>
+        $(document).ready(function (){
+            $("#playBallId").click(function (){
+                $("#myBallId").css("position","relative");
+                let move = [["500px","0px","200px"],
+                            ["500px","300px","250px"],
+                            ["-=500px","-=300px","120px"]];
+                for(let i = 0;i<move.length;i++)
+                {
+                    $("#myBallId").animate({
+                            left : move[i][0],
+                            top : move[i][1],
+                            width : move[i][2]
+                    },1000);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

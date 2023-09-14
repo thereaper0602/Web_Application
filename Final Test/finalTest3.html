@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        body div:nth-child(1){
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div>
+        <button>Move right</button>
+        <button>Move left</button>
+        <button>Move up</button>
+        <button>Move down</button>
+    </div>
+
+    <script>
+        $(document).ready(function (){
+            let wdWithd = window.innerWidth;
+            let wdHeight = window.innerHeight;
+            $("body div:nth-child(2) button:nth-child(1)").click(function (){
+                $("body div:nth-child(1)").animate({
+                    left : `${window.innerWidth-210}px`
+                },1000)
+            });
+
+            $("body div:nth-child(2) button:nth-child(2)").click(function (){
+                $("body div:nth-child(1)").animate({
+                    left : `0px`
+                },1000)
+            });
+
+            $("body div:nth-child(2) button:nth-child(4)").click(function (){
+                $("body div:nth-child(1)").animate({
+                    top : `${window.innerHeight-110}px`
+                },1000)
+            });
+
+            $("body div:nth-child(2) button:nth-child(3)").click(function (){
+                $("body div:nth-child(1)").animate({
+                    top : `0px`
+                },1000)
+            });
+
+            
+        })
+    </script>
+</body>
+</html>

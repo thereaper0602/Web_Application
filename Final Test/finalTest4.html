@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body > div{
+            background-color: bisque;
+        }
+
+        div > fieldset{
+            border-color: rgb(0, 60, 255);
+        }
+
+        body > p{
+            font-size: 80px;
+        }
+    </style>
+
+</head>
+<body>
+<div>
+    <fieldset>
+        <legend>Chọn</legend>
+
+        <input type="radio" name = "kind" id = "shadow"/>
+        <label for="shadow">Chữ có bóng</label>
+
+        <br>
+
+        <input type="radio" name = "kind" id = "normal"/>
+        <label for="normal">Chữ thường</label>
+        <br>
+        <label for = "colorPicker">Chọn màu chữ</label>
+        <input type = "color" id = "colorPicker" >
+    </fieldset>
+</div>
+
+    <p>HTML</p>
+
+    <script>
+        $(document).ready(function (){
+            $("#shadow").click(function (){
+                $("body > p").css("text-shadow","2px 4px 4px black")
+            });
+
+            $("#normal").click(function (){
+                $("body > p").css("text-shadow","none")
+            });
+
+            $("#colorPicker").change(function (){
+                let newColor = $("#colorPicker").val();
+                $("body > p").css("color",newColor);
+            })
+        })
+    </script>
+</body>
+</html>

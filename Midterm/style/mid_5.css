@@ -1,0 +1,156 @@
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(51, 187, 255);
+}
+
+header h2{
+    margin-left: 10px;
+    color: yellow;
+    text-shadow: 2px 4px 3px rgba(217, 5, 2, 1);
+}
+
+header p{
+    color: white;
+    margin-right: 10px;
+    text-shadow: 1px 2px 3px black;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(23, 98, 228);
+    color: white;
+}
+
+nav a{
+    border: solid 1px white;
+    padding: 0px 50px;
+}
+
+.container{
+    margin-top: 1.2px;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    min-width: 20px;
+    z-index: 1000;
+    background-color:rgb(23, 98, 228);
+    transition: all .5s linear;
+}
+
+.dropdown-menu a{
+    padding-left: 0;
+    display: block;
+    width: 98px;
+}
+
+.container:hover .dropdown-menu{
+    display: block;
+}
+
+nav a:hover{
+    background-color: rgb(83, 125, 199);
+}
+
+.left-section{
+    position: fixed;
+    background-color: lightblue;
+    width: 200px;
+    margin-bottom: 0;
+}
+
+.left-section p{
+    font-size: 20px;
+    font-weight: bold;
+    border : solid 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 150px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+    box-shadow: 3px 5px 3px ;
+}
+
+.right-section{
+    display: flex;
+    position: fixed;
+    left : 250px;
+    right : 8px;
+    margin-bottom: 0;
+}
+
+#main-screen{
+    position: fixed;
+    left : 250px;
+    right : 8px;
+    margin-bottom: 0;
+}
+
+.right-section .pic1 img{
+    height: 529px;
+    width: 40em;
+    border: solid 1px black;
+}
+
+.text{
+    font-size: 20px;
+    margin: 10px 10px ;
+    border: solid 1px black;
+    padding: 10px;
+}
+
+.pic2 img{
+    margin-left: 10px;
+    width: 89%;
+    height: 90%;
+    border: solid 1px black;
+    padding-right: 50px;
+}
+
+img:hover{
+    opacity: .5;
+    transition: opacity .3s;
+}
+
+footer{
+    position: fixed;
+    bottom: 100px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color:rgb(23, 98, 228);
+    width: 100%;
+}
+
+textarea{
+    width: 250px;
+    height: 90px;
+    background-color: blanchedalmond;
+    font-size: 20px;
+}
+
+.task{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.task button{
+    font-weight: bold;
+}

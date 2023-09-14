@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id = "gradient">
+    <input type = "text" id = "arr" onchange="linear()">
+    <script>
+        let x = document.getElementById("arr");
+        function linear(){
+            xVal = x.value;
+            let xArr = xVal.split(',');
+            console.log(xArr);
+            if(xArr.length <= 1){
+                alert("Nhập trên hai giá trị");
+            }
+            else{
+                let body = "linear-gradient(";
+                for(let i = 0;i<xArr.length;i++){
+                    body = body + xArr[i];
+                    if(i < xArr.length-1){
+                        body = body + ",";
+                    }
+                }
+                body = body + ")";
+                console.log(body);
+                document.getElementById("gradient").style.backgroundImage = body;
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

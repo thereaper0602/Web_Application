@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body > div{
+            display: flex;
+            justify-content: center;
+        }
+
+        body div div{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(183, 180, 180);
+            color: blue;
+            text-shadow: 1px 2px 2px black;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        body p:nth-child(2){
+            text-align: center;
+        }
+
+        body p:nth-child(3){
+            text-align: center;
+            font-size: 15px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<p>
+    <button>Quay số</button>
+</p>
+<p></p>
+
+
+<script>
+    $(document).ready(function(){
+        $("body p:nth-child(2) button").click(function (){
+            let num1 = Math.floor(Math.random() * 10);
+            let num2 = Math.floor(Math.random() * 10);
+            let num3 = Math.floor(Math.random() * 10);
+            $("body div div:nth-child(1)").html(`${num1}`);
+            $("body div div:nth-child(2)").html(`${num2}`);
+            $("body div div:nth-child(3)").html(`${num3}`);
+            $("body p:nth-child(3)").text(`${num1 + num2 + num3}`);
+        })
+    })
+</script>
+</body>
+</html>
